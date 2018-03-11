@@ -9,7 +9,7 @@ s3 = boto3.client('s3')
 # way back here
 sqs = boto3.client('sqs')
 queue = sqs.Queue('https://sqs.eu-west-1.amazonaws.com/233680902524/sqsDoorbell.fifo')
-messages = queue.receive_messages(WaitTimeSeconds=1)
+messages = queue.receive_message(WaitTimeSeconds=1)
 print(messages)
 
 #response = queue.delete_messages(
